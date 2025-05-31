@@ -12,16 +12,20 @@ document.getElementById("companyForm").addEventListener("submit", async function
     }
   });
 
-  const res = await fetch("http://localhost:3001/companies", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
+  try {
+    const res = await fetch("https://company-registerapi.onrender.com/api/companies", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
 
-  if (res.ok) {
-    alert("ثبت با موفقیت انجام شد");
-    this.reset();
-  } else {
-    alert("خطا در ثبت اطلاعات");
+    if (res.ok) {
+      alert("ثبت با موفقیت انجام شد");
+      this.reset();
+    } else {
+      alert("خطا در ثبت اطلاعات");
+    }
+  } catch (error) {
+    alert("خطا در ارسال اطلاعات: " + error.message);
   }
 });
