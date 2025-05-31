@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login({ onLogin }) {
@@ -7,20 +7,31 @@ export default function Login({ onLogin }) {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
-    // مثال ساده اعتبارسنجی
-    if (email === "test@example.com" && password === "123456") {
-      onLogin({ email });
-      navigate("/dashboard");
-    } else {
-      setError("ایمیل یا رمز عبور اشتباه است");
+    try {
+      const res = await fetch("https://company-registerapi.onrender.com/api/companies");
+      const companies = await res.json();
+
+      const user = companies.find(
+        (c) => c.email === email && c.password === password
+      );
+
+      if (user) {
+        onLogin(user);
+        navigate("/layout");
+      } else {
+        setError("ایمیل یا رمز عبور اشتباه است");
+      }
+    } catch (err) {
+      setError("خطا در ارتباط با سرور");
     }
   };
 
   return (
-    <div className="max-w-md mx-auto mt-20 p-6 border rounded">
+    <div className="max-w-md mx-auto mt-20 p-6 border rounded" dir="rtl">
       <h2 className="text-xl mb-4 text-center">ورود</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input

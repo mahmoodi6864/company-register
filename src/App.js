@@ -1,15 +1,26 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Entry from "./Pages/Entry";
-import CompanyRegisterForm from "./Pages/CompanyRegisterForm";
 import Login from "./Pages/Login";
+import CompanyRegisterForm from "./Pages/CompanyRegisterForm";
+import PrivateRoute from "./components/PrivateRoute";
+import Layout from "./components/Layout";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Entry />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/CompanyRegisterForm" element={<CompanyRegisterForm />} />
+        <Route path="/login" element={<Login onLogin={() => setIsLoggedIn(true)} />} />
+        <Route path="/register" element={<CompanyRegisterForm />} />
+        <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
+          <Route path="/layout" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+          </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
