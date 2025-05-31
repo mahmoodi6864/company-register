@@ -1,3 +1,22 @@
 {
-  "companies": []
+  "companies": [
+    {
+      "id": "c5cb",
+      "firstName": "",
+      "lastName": "",
+      "fatherName": "",
+      "dateOfBirth": "",
+      "gender": "",
+      "province": "",
+      "address": "",
+      "phoneNumber1": "",
+      "phoneNumber2": "",
+      "companyName": "",
+      "companyEstablished": "",
+      "email": "",
+      "password": "",
+      "telegramUserId": "",
+      "image": ""
+    }
+  ]
 }
