@@ -1,3 +1,64 @@
 {
-  "companies": []
+  "companies": [
+    {
+      "id": 1,
+      "firstName": "احمد",
+      "lastName": "فرهمند",
+      "fatherName": "جمال",
+      "dateOfBirth": "1990-05-12",
+      "gender": "مرد",
+      "province": "کابل",
+      "address": "ناحیه ۳، کارته‌نو",
+      "phoneNumber1": "0700123456",
+      "phoneNumber2": "0780123456",
+      "companyName": "توسعه نرم‌افزار افغان",
+      "companyEstablished": "2015-01-01",
+      "email": "ahmad@example.com",
+      "password": "password123",
+      "telegramUserId": "123456789",
+      "image": "",
+      "termsAccepted": true,
+      "accountLocked": false
+    },
+    {
+      "id": 2,
+      "firstName": "فرشته",
+      "lastName": "حیدری",
+      "fatherName": "رحیم",
+      "dateOfBirth": "1995-08-22",
+      "gender": "زن",
+      "province": "هرات",
+      "address": "جاده ملکی‌ها",
+      "phoneNumber1": "0700987654",
+      "phoneNumber2": "0770123456",
+      "companyName": "شرکت صادراتی حیدری",
+      "companyEstablished": "2018-06-15",
+      "email": "farshte@example.com",
+      "password": "secure456",
+      "telegramUserId": "987654321",
+      "image": "",
+      "termsAccepted": true,
+      "accountLocked": false
+    },
+    {
+      "id": 3,
+      "firstName": "حسین",
+      "lastName": "نوری",
+      "fatherName": "جعفر",
+      "dateOfBirth": "1987-11-30",
+      "gender": "مرد",
+      "province": "بلخ",
+      "address": "مزارشریف، حوزه اول",
+      "phoneNumber1": "0790011223",
+      "phoneNumber2": "0780011223",
+      "companyName": "فناوری نوری",
+      "companyEstablished": "2020-03-10",
+      "email": "hossein.nouri@example.com",
+      "password": "techpass789",
+      "telegramUserId": "246813579",
+      "image": "",
+      "termsAccepted": true,
+      "accountLocked": false
+    }
+  ]
 }
