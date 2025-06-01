@@ -15,12 +15,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Entry />} />
         <Route path="/login" element={<Login onLogin={() => setIsLoggedIn(true)} />} />
-        {/* <Route path="/register" element={<CompanyRegisterForm />} /> */}
+        <Route path="/register" element={<CompanyRegisterForm />} />
         <Route element={<PrivateRoute isLoggedIn={isLoggedIn} />}>
           <Route path="/layout" element={<Layout />}>
             <Route index element={<Dashboard />} />
           </Route>
         </Route>
+         <Route path="*" element={<Navigate to="/entry" />} />
       </Routes>
     </BrowserRouter>
   );
